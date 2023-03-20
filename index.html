@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<body>
+  <div class="p-top-mv">
+    <img src="./images/bg-fv-pc.jpg" alt="">
+  </div>
+    
+  
+  <section id="section2" class="p-section js-section">
+    <div class="l-inner">
+    <div class="p-top-unit">
+      <div class="l-target scrollify"></div>
+      <p class="p-top-unit__title-en u-fadeInAnime-scroll js-scrollAnimation">Our Philosophy</p>
+      <h2 class="p-top-unit__title-jp u-fadeInAnime-scroll js-scrollAnimation">経営理念</h2>
+      <strong class="p-top-unit__main-text u-fadeInAnime-scroll js-scrollAnimation">既成概念を捨てて、<br class="u-mobile">チャレンジ</strong>
+      <p class="p-top-unit__text u-fadeInAnime-scroll js-scrollAnimation">
+        これは私たちが創業以来変わらない、大切な理念です。<br>
+        今までの知識や経験を武器にしながらも、<br>
+        その武器にとらわれずに新たな視点で「考える」という、難しいものです。<br>
+        そして、お客様ごとに異なる問題を課題に変えて、また「考える」のです。<br>
+        <span class="u-desktop">
+          <br>
+          考えて、考えて、考え抜いて、お客様と一緒に未来を「視る」。<br>
+          こうしたチャレンジし続けるひたむきさが、お客様のためになり<br>
+          エキスパートとして成長できる糧にもなるのだと信じています。
+        </span>
+      </p>
+      </div>
+    </div>
+
+  </section>
+  <section id="section2" class="p-section">
+    <div class="l-inner">
+    <div class="p-top-unit">
+      <div class="l-target scrollify"></div>
+      <p class="p-top-unit__title-en u-fadeInAnime-scroll js-scrollAnimation">Our Philosophy</p>
+      <h2 class="p-top-unit__title-jp u-fadeInAnime-scroll js-scrollAnimation">経営理念</h2>
+      <strong class="p-top-unit__main-text u-fadeInAnime-scroll js-scrollAnimation">既成概念を捨てて、<br class="u-mobile">チャレンジ</strong>
+      <p class="p-top-unit__text u-fadeInAnime-scroll js-scrollAnimation">
+        これは私たちが創業以来変わらない、大切な理念です。<br>
+        今までの知識や経験を武器にしながらも、<br>
+        その武器にとらわれずに新たな視点で「考える」という、難しいものです。<br>
+        そして、お客様ごとに異なる問題を課題に変えて、また「考える」のです。<br>
+        <span class="u-desktop">
+          <br>
+          考えて、考えて、考え抜いて、お客様と一緒に未来を「視る」。<br>
+          こうしたチャレンジし続けるひたむきさが、お客様のためになり<br>
+          エキスパートとして成長できる糧にもなるのだと信じています。
+        </span>
+      </p>
+      </div>
+    </div>
+
+  </section>
+  <section id="section2" class="p-section">
+    <div class="l-inner">
+    <div class="p-top-unit">
+      <div class="l-target scrollify"></div>
+      <p class="p-top-unit__title-en u-fadeInAnime-scroll js-scrollAnimation">Our Philosophy</p>
+      <h2 class="p-top-unit__title-jp u-fadeInAnime-scroll js-scrollAnimation">経営理念</h2>
+      <strong class="p-top-unit__main-text u-fadeInAnime-scroll js-scrollAnimation">既成概念を捨てて、<br class="u-mobile">チャレンジ</strong>
+      <p class="p-top-unit__text u-fadeInAnime-scroll js-scrollAnimation">
+        これは私たちが創業以来変わらない、大切な理念です。<br>
+        今までの知識や経験を武器にしながらも、<br>
+        その武器にとらわれずに新たな視点で「考える」という、難しいものです。<br>
+        そして、お客様ごとに異なる問題を課題に変えて、また「考える」のです。<br>
+        <span class="u-desktop">
+          <br>
+          考えて、考えて、考え抜いて、お客様と一緒に未来を「視る」。<br>
+          こうしたチャレンジし続けるひたむきさが、お客様のためになり<br>
+          エキスパートとして成長できる糧にもなるのだと信じています。
+        </span>
+      </p>
+      </div>
+    </div>
+
+  </section>
+
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      .p-top-mv {
+        width: 100%;
+        height: 100vh;
+      }
+      .p-top-mv img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .p-section {
+        text-align: center;
+        padding: 100px 0 100px;
+      }
+    </style>
+
+
+    <script>
+      let set_position = 0;
+      let section = document.querySelector('.js-section');
+      let sectionPosition = section.getBoundingClientRect();
+      let sectionTop = sectionPosition.top + window.pageYOffset;
+      window.addEventListener('scroll', function () {
+        if (set_position < window.pageYOffset && window.pageYOffset < sectionTop) {
+          window.requestAnimationFrame(function() {
+          window.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth',
+      });
+          });
+        }
+        set_position = window.pageYOffset;
+      });
+    </script>
+
+  </body>
+</html>
