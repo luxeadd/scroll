@@ -114,11 +114,9 @@
       let sectionTop = sectionPosition.top + window.pageYOffset;
       window.addEventListener('scroll', function () {
         if (set_position < window.pageYOffset && window.pageYOffset < sectionTop) {
-          window.requestAnimationFrame(function() {
           window.scrollTo({
           top: sectionTop,
           behavior: 'smooth',
-      });
           });
         }
         set_position = window.pageYOffset;
