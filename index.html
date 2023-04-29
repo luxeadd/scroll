@@ -8,7 +8,9 @@
   <title>Document</title>
   <meta name="robots" content="noindex" />
   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+  <script src="./js/script.js"></script>
   <!-- jplayer -->
+  <link rel="stylesheet" href="/play/jplayer.blue.monday.css">
   <script type="text/javascript" src="/play/jquery.jplayer.min.js"></script>
 
 </head>
@@ -41,13 +43,89 @@
           <div class="l-target scrollify"></div>
           <p class="p-top-unit__title-en u-fadeInAnime-scroll js-scrollAnimation">タイトル</p>
           <h2 class="p-top-unit__title-jp u-fadeInAnime-scroll js-scrollAnimation">プラグイン[jPlayer]</h2>
+
+
+          <!-- CODE -->
+          <!-- <div id="audio_player" class="jp-jplayer"></div>
+          <div id="jp_container_1" class="jp-audio">
+            <div class="jp-type-single">
+              <div class="jp-gui jp-interface">
+                <ul class="jp-controls">
+                  <li><a href="#" class="jp-play" tabindex="1">play</a></li>
+                  <li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+                  <li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+                  <li><a href="#" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                  <li><a href="#" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                  <li><a href="#" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                </ul>
+                <div class="jp-progress">
+                  <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                  </div>
+                </div>
+                <div class="jp-volume-bar">
+                  <div class="jp-volume-bar-value"></div>
+                </div>
+                <div class="jp-time-holder">
+                  <div class="jp-current-time"></div>
+                  <div class="jp-duration"></div>
+                  <ul class="jp-toggles">
+                    <li><a href="#" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                    <li><a href="#" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="jp-no-solution">
+                <span>Update Required</span>
+                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+              </div>
+            </div>
+          </div> -->
+          <!-- / CODE -->
+
+
+
+          <!-- <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+          <div class="jp-audio">
+            <div class="jp-type-single">
+              <div id="jp_interface_1" class="jp-interface">
+                <ul class="jp-controls">
+                  <li><a href="#" class="jp-play" tabindex="1">play</a></li>
+                  <li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+                  <li><a href="#" class="jp-stop" tabindex="1">stop</a></li>
+                  <li><a href="#" class="jp-mute" tabindex="1">mute</a></li>
+                  <li><a href="#" class="jp-unmute" tabindex="1">unmute</a></li>
+                </ul>
+                <div class="jp-progress">
+                  <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                  </div>
+                </div>
+                <div class="jp-volume-bar">
+                  <div class="jp-volume-bar-value"></div>
+                </div>
+                <div class="jp-current-time"></div>
+                <div class="jp-duration"></div>
+              </div>
+              <div id="jp_playlist_1" class="jp-playlist">
+                <ul>
+                  <li>曲のタイトル</li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+
+
           <div id="player"></div>
           <div class="btn">再生</div>
+
+
         </div>
       </div>
 
     </section>
-    <section id="section2" class="p-section">
+    <!-- <section id="section2" class="p-section">
       <div class="l-inner">
         <div class="p-top-unit">
           <div class="l-target scrollify"></div>
@@ -69,7 +147,7 @@
         </div>
       </div>
 
-    </section>
+    </section> -->
 
 
     <style>
@@ -95,71 +173,6 @@
       }
     </style>
 
-
-    <script>
-      jQuery(function($) {
-        $('#player').jPlayer({
-          ready: function() {
-            $(this).jPlayer("setMedia", {
-              mp3: 'test.mp3' //再生するMP3のパスを指定します
-            });
-          },
-          loop: false, // ループ再生をするかどうかの設定
-          volume: 0.5, // ボリュームの設定 0~1で指定します
-          swfPath: "/play/jquery.jplayer.swf",
-          ssupplied: 'mp3', //再生するメディアの設定
-          play: function() { // 再生時の処理
-            $('.btn').addClass('play').text('停止');
-          },
-          ended: function() { // 終了時の処理
-            $('.btn').removeClass('play').text('再生');
-          }
-        });
-        $('.btn').on('click', function() {
-          if ($(this).hasClass('play')) { // 停止ボタンを押した時の処理
-            $('.btn').removeClass('play').text('再生');
-            $('#player').jPlayer('stop');
-          } else { // 再生ボタンを押した時の処理
-            $(this).text('停止');
-            $('#player').jPlayer('play');
-          }
-        });
-      });
-
-      // let set_position = 0;
-      // let section;
-      // let sectionTop;
-      // let ticking = false;
-
-      // function updatePosition() {
-      //   let sectionPosition = section.getBoundingClientRect();
-      //   sectionTop = sectionPosition.top + window.pageYOffset;
-      //   ticking = false;
-      // }
-
-      // function onScroll() {
-      //   if (!ticking) {
-      //     window.requestAnimationFrame(function() {
-      //       if (set_position < window.pageYOffset && window.pageYOffset < sectionTop) {
-      //         window.scrollTo({
-      //           top: sectionTop,
-      //           behavior: 'auto',
-      //         });
-      //       }
-      //       set_position = window.pageYOffset;
-      //       ticking = false;
-      //     });
-      //     ticking = true;
-      //   }
-      // }
-
-      // window.addEventListener('load', function() {
-      //   section = document.querySelector('.js-section');
-      //   updatePosition();
-      //   window.addEventListener('scroll', onScroll);
-      //   window.addEventListener('resize', updatePosition);
-      // });
-    </script>
 
   </body>
 
